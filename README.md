@@ -1,25 +1,29 @@
+# Riff Raff Generator 🎤
 
-# Z Cavaricci Hook FX Processor
+This is a surreal freestyle hook and bar generator in the spirit of RiFF RAFF & Lil Debbie.
+Built with Python + Streamlit for use in GitHub Codespaces or locally.
 
-This Python script processes a vocal recording into a stylized, auto-tune-ready hook inspired by early RiFF RAFF and Lil Debbie vibes. It simulates doubling, reverb, and prepares stems for Cubasis or any DAW.
+## Features
 
-## Requirements
-- Python 3.8+
-- ffmpeg installed and in system PATH
-- `pip install pydub librosa soundfile`
+- Choose persona & theme
+- Generate 4-bar verse or chant-style hook
+- Customize "Flex Level" & "Nonsense Juice"
 
-## Usage
-1. Place your voice recording as `your_recording.m4a` in the project root.
-2. Run the script:
+## Setup
+
 ```bash
-python z_cavaricci_hook_fx.py
+# Create and activate a Python virtual environment
+python3 -m venv env
+source env/bin/activate
+
+# Install project dependencies
+pip install -r requirements.txt
 ```
-3. Outputs go to `/output`, including final WAV and vocal stems.
 
-## Files Generated
-- `Z_Cavaricci_Hook_Stylized.wav`: The final polished hook.
-- `stem_dry.wav`: Dry voice
-- `stem_doubled.wav`: Stereo widened version
-- `stem_reverb.wav`: Reverb trail
+## To Run
 
-Customize the script as needed for your vocal chain or DAW integration.
+```bash
+streamlit run streamlit_app.py
+```
+
+Or open in GitHub Codespaces and run it in the preview browser.
