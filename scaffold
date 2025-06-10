@@ -1,0 +1,60 @@
+riff-raff/                             # Root of your repo
+├── README.md                          # Project overview, quickstart, architecture diagram
+├── CONTRIBUTING.md                    # Contribution guidelines, code style, commit conventions
+├── LICENSE                            # License (e.g. MIT)
+├── .gitignore                         # Ignore Python caches, .env, data folders
+├── requirements.txt                   # Python dependencies
+├── environment.yml                    # (Optional) Conda environment spec
+├── streamlit.toml                     # Streamlit configuration
+├── config/                            # YAML/JSON config for models and generation
+│   ├── default.yaml                   # Default hyperparameters for lyric/hook models
+│   └── personas.yaml                  # Definitions of Riff Raff personas & vocab lists
+
+├── data/                              # Static assets & sample data
+│   ├── sample_lyrics/                 # Seed lyrics for demonstration
+│   ├── sample_hooks/                  # MIDI hook examples
+│   └── vocabulary/                    # Persona-specific token lists
+
+├── src/                               # Core application code
+│   ├── __init__.py
+│   ├── app.py                         # Streamlit main entrypoint
+│   ├── lyrics/                        # Lyric generation components
+│   │   ├── generator.py               # Prompt templates & model calls
+│   │   ├── finetune.py                # Fine-tune workflow on user data
+│   │   └── utils.py                   # Preprocessing, post-processing
+│   ├── hooks/                         # Hook generation and MIDI integration
+│   │   ├── midi_generator.py          # Convert text hooks to MIDI via models
+│   │   ├── midi_export.py             # Save or stream MIDI to user
+│   │   └── utils.py                   # Helper functions
+│   ├── personas/                      # Persona specificity modules
+│   │   ├── vocab_loader.py            # Load & manage persona vocab
+│   │   └── style_transfer.py          # Inject persona style into prompts
+│   ├── ui/                            # Streamlit UI components
+│   │   ├── sidebar.py                 # Controls for model selection, sliders
+│   │   ├── content.py                 # Display lyrics, hooks, download buttons
+│   │   └── layout.py                  # Page layout & theming
+│   └── utils.py                       # Shared utilities (logging, config loader)
+
+├── tests/                             # Unit & integration tests
+│   ├── test_generator.py
+│   ├── test_midi_generator.py
+│   ├── test_personas.py
+│   └── test_utils.py
+
+├── notebooks/                         # Jupyter demos & prototyping
+│   ├── lyric_prototyping.ipynb
+│   └── midi_hook_demo.ipynb
+
+├── docs/                              # High-level documentation
+│   ├── ARCHITECTURE.md                # System overview & component diagram
+│   ├── GETTING_STARTED.md             # Setup & local running instructions
+│   ├── CONFIGURATION.md               # Config file reference
+│   ├── STREAMLIT_UI.md                # How UI components are organized
+│   ├── TESTING.md                     # How to run tests and add new ones
+│   └── DEPLOYMENT.md                  # Hosting demo on Streamlit Cloud or similar
+
+└── .github/                           # GitHub workflows
+    ├── workflows/                     # CI/CD pipelines
+    │   ├── tests.yml                  # Run unit tests on PRs
+    │   └── deploy.yml                 # Deploy demo on merge to main
+    └── ISSUE_TEMPLATE/                # Bug report & feature request templates
